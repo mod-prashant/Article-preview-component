@@ -3,6 +3,9 @@ const tooltip = document.getElementById("shareTooltip");
 const authorInfo = document.getElementById("authorInfo");
 const shareTooltip = document.getElementById("shareTooltip");
 const shareBOX = document.getElementById("shareBOX");
+const cardContent = document.getElementById("cardContent");
+
+const box = document.getElementById("box");
 
 
 shareBtn.addEventListener("click", () => {
@@ -13,6 +16,9 @@ shareBtn.addEventListener("click", () => {
     shareTooltip.classList.toggle("active");
     shareBOX.classList.toggle("style");
     shareBtn.classList.toggle("active");
+    box.classList.toggle("boxstyle");
+    cardContent.classList.toggle("card-contenstyle");
+
   } else {
     tooltip.classList.toggle("active");
     shareBtn.classList.toggle("active");

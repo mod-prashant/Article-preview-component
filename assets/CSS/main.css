@@ -32,7 +32,7 @@ body {
 /* card */
 .card {
   display: grid;
-  grid-template-areas: "image card card";
+  grid-template-areas: "image box box";
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   gap: 0;
@@ -53,14 +53,20 @@ body {
   display: block;
 }
 
-/* Card Content */
-.card-content {
-  grid-area: card;
+/* box */
+
+.box{
+  grid-area: box;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
+}
+
+/* Card Content */
+.card-content {
+  padding: 0;
 }
 
 .card-content h1{
@@ -208,11 +214,16 @@ footer a {
   .card{
     grid-template-areas:
       "image"
-      "card";
+      "box";
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
   }
-
+  .boxstyle{
+    padding: 0;
+  }
+  .card-contenstyle{
+    padding: 2rem;
+  }
   .share{
     display: flex;
     justify-content: space-between;
