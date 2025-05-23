@@ -234,6 +234,7 @@ footer a {
   .style{
     background-color: var(--Very-Dark-Grayish-Blue);
     width: 100%;
+    border-radius: 0 0 0.5rem 0.5rem;
   }
   .share-tooltip{
     display: none;
@@ -241,7 +242,6 @@ footer a {
     bottom: 0;
     right: 0;
     padding: 0;
-    border-radius: 0;
     align-items: center;
     gap: 1rem;
     font-size: 0.75rem;

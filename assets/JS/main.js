@@ -17,7 +17,7 @@ shareBtn.addEventListener("click", () => {
     shareBOX.classList.toggle("style");
     shareBtn.classList.toggle("active");
     box.classList.toggle("boxstyle");
-    cardContent.classList.toggle("card-contenstyle");
+    cardContent.classList.toggle("card-contenstyle")
 
   } else {
     tooltip.classList.toggle("active");
