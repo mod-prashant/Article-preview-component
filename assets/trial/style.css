@@ -1,0 +1,262 @@
+/* CSS reset */
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root{
+    --font-primary: "Manrope", sans-serif;
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --GrayishBlue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+    --white: hsl(0, 0%, 100%);
+}
+
+/* Body */
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 16px;
+    font-weight: 500;
+    font-family: var(--font-primary);
+    color: var(--Desaturated-Dark-Blue);
+    background-color: var(--Light-Grayish-Blue);
+}
+
+/* card */
+.card {
+  display: grid;
+  grid-template-areas: "image card card";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 0;
+  max-width: 780px;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  overflow: visible;;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* card image */
+.card-image{
+  grid-area: image;
+}
+.card-image img {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+/* Card Content */
+.card-content {
+  grid-area: card;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card-content h1{
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--Very-Dark-Grayish-Blue);
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/*bottom*/
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/*author*/
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.author-text {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
+.author-text h2{
+  color: var(--Very-Dark-Grayish-Blue);
+}
+
+/*share*/
+
+.share {
+  position: relative;
+}
+
+.share.style{
+  background-color: var(--Very-Dark-Grayish-Blue);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.shareBtn {
+  background-color: var(--Light-Grayish-Blue);
+  border: none;
+  border-radius: 50%;
+  padding: 0.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  transition: background-color 0.3s ease;
+  z-index: 1;
+}
+
+.shareBtn.style {
+  background-color: var(--Very-Dark-Grayish-Blue);
+}
+
+.shareBtn.style img {
+  filter: brightness(0) invert(1);
+}
+
+/* Tooltip styles */
+.share-tooltip {
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  right: -85px;
+  background-color: var(--Very-Dark-Grayish-Blue);
+  color: white;
+  padding: 1rem 1.8rem;
+  border-radius: 10px;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  z-index: 5;
+}
+
+.share-tooltip span{
+  color: var(--GrayishBlue);
+}
+
+/* Show tooltip when active */
+.active {
+  display: flex;
+}
+.hide {
+  display: none;
+}
+
+/* MOBILE TOOLTIP (shown when share is clicked) */
+.mob-tooltip {
+  display: none;
+  background-color: var(--Very-Dark-Grayish-Blue);
+  color: white;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 0 0 10px 10px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.mob-tooltip > div {
+  margin: 0 1rem;
+}
+
+.mob-tooltip.active {
+  display: flex;
+}
+
+/* hide author section on mobile when sharing */
+.bottom.hide {
+  display: none;
+}
+
+
+
+/* Tooltip arrow (tail) */
+.tooltip-arrow {
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  display: flex;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: var(--Very-Dark-Grayish-Blue);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+#mob-share-btn{
+  display: none;
+}
+
+
+/* Footer */
+footer {
+    width: 100%;
+    padding: 0.5rem;
+    max-height: 3rem;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 2rem;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    color: var(--white);
+}
+   
+/* Footer Links */
+footer a {
+    color: var(--Light-Grayish-Blue);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+  .card{
+    grid-template-areas:
+      "image"
+      "card";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+  .tooltip-arrow{
+    display: none;
+  }
+  #mob-share-btn{
+    display: flex;
+    background-color: var(--Desaturated-Dark-Blue);
+  }
+  #mob-share-btn img{
+    color: var(--white);
+  }
+}
