@@ -90,6 +90,10 @@ body {
   justify-content: space-between;
 }
 
+.hide{
+  display: none;
+}
+
 .author .avatar {
   width: 40px;
   height: 40px;
@@ -128,28 +132,12 @@ body {
 }
 
 #shareBtn.active {
-  background-color: var(--Very-Dark-Grayish-Blue);
+  background-color: var(--Desaturated-Dark-Blue);
 }
 
 #shareBtn.active img {
   filter: brightness(0) invert(1);
 }
-/*
-.share-tooltip {
-  display: none;
-  position: absolute;
-  bottom: 120%;
-  right: 0;
-  background-color: var(--Very-Dark-Grayish-Blue);
-  color: white;
-  padding: 10px 16px;
-  border-radius: 10px;
-  gap: 0.5rem;
-  align-items: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-}
-*/
 
 /* Tooltip styles */
 .share-tooltip {
@@ -223,5 +211,34 @@ footer a {
       "card";
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
+  }
+
+  .share{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1rem 2rem;
+    gap: 1rem;
+  }
+  .style{
+    background-color: var(--Very-Dark-Grayish-Blue);
+    width: 100%;
+  }
+  .share-tooltip{
+    display: none;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    padding: 0;
+    border-radius: 0;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    z-index: 5;
+  }
+  .tooltip-arrow{
+    display: none;
   }
 }
